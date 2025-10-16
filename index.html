@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bookmarker</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&family=PT+Sans+Caption:wght@400;700&family=Righteous&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <main class="container p-5">
+      <div class="text-center">
+        <h1>Bookmarker</h1>
+      </div>
+
+      <div class="header-divider"></div>
+
+      <div class="bookmark-body p-4 mt-5">
+        <h2 class="text-center">
+          <i class="fa-solid fa-bookmark"></i>
+          Bookmark your favorite sites
+          <i class="fa-solid fa-bookmark"></i>
+        </h2>
+
+        <div class="mb-3">
+          <label for="bookmarkName" class="form-label fw-bold">
+            <i class="fa-solid fa-book-bookmark pe-2"></i>
+            Site Name
+          </label>
+          <input
+            type="text"
+            class="form-control"
+            id="bookmarkName"
+            placeholder="Bookmark Name"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label for="bookmarkUrl" class="form-label fw-bold">
+            <i class="fa-solid fa-link pe-2"></i>
+            Site URL
+          </label>
+          <input
+            type="text"
+            class="form-control"
+            id="bookmarkUrl"
+            placeholder="Website URL"
+          />
+        </div>
+
+        <div class="text-center">
+          <button class="btn btn-submit px-5" id="submitBtn">Submit</button>
+        </div>
+      </div>
+
+      <div class="header-divider"></div>
+
+      <table class="table mt-4 text-center bg-light">
+        <thead>
+          <tr>
+            <th>Index</th>
+            <th>Website Name</th>
+            <th>Visit</th>
+            <th>Delete</th>
+          </tr>
+        </thead>
+        <tbody id="tableBody"></tbody>
+      </table>
+    </main>
+
+    <div
+      class="modal fade"
+      id="alertModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Invalid Input</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <p>Site Name or URL is not valid, please follow the rules below:</p>
+            <ul>
+              <li>
+                <i class="fa-regular fa-circle-right text-danger"></i> Site name
+                must contain at least 3 characters.
+              </li>
+              <li>
+                <i class="fa-regular fa-circle-right text-danger"></i> Site URL
+                must be a valid URL.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
